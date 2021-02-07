@@ -54,6 +54,7 @@ FUNCTION is a function taking a single node."
          (i 0))
     (while (< i number-of-nodes)
       (funcall fun (nth i nodes))
+      ;; reset nodes, which may have changed
       (setq nodes (org-api/get-nodes-recursive-in-current-buffer condition))
       (setq new-number-of-nodes (length nodes))
       ;; increment `i', but also decrement it if we deleted node.
