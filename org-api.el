@@ -19,13 +19,13 @@
 (defun org-api/get-nodes-in-section (section condition)
   "Get a list of nodes in SECTION matching CONDITION.
 CONDITION is a pattern used with `org-ml-match' that must evaluate to true
-for the node to be added to the list of nodes."
+for the node to be included in the list of nodes."
   (org-ml-match condition section))
 
 (defun org-api/get-nodes-recursive-in-headline (headline nodes condition)
-  "Get all NODES in HEADLINE recursively.
+  "Get all NODES in HEADLINE recursively matching CONDITION.
 CONDITION is a pattern used with `org-ml-match' that must evaluate to true
-for the node to be added to the list of nodes."
+for the node to be included in the list of nodes."
   (let ((section (org-api/get-section headline))
         (headlines (org-api/get-headlines headline)))
     (setq nodes
