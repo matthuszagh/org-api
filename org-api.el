@@ -48,7 +48,7 @@ The syntax of CONDITION is the same as that of `pattern' in `org-ml-match'."
 
 (defun org-api/map-nodes-recursive-in-current-buffer (fun condition)
   "Apply FUN to each node matching CONDITION.
-FUNCTION is a function taking a single node.  FUNCTION may modify"
+FUNCTION is a function taking a single node."
   (let* ((nodes (org-api/get-nodes-recursive-in-current-buffer condition))
          (number-of-nodes (length nodes))
          (i 0))
